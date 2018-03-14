@@ -24,10 +24,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 #Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff http://rails-i18n.org
 gem 'rails-i18n'
-
 #Manage Procfile-based applications 
 gem  'foreman'
-
+#Flexible authentication solution for Rails with Warden
+gem 'devise'
+#Translations for the devise gem
+gem 'devise-i18n'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
