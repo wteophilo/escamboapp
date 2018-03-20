@@ -8,11 +8,11 @@
   <%= javascript_include_tag 'site', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
-</body>
+	<body>
+		<%= render partial: "layouts/site_shared/navegation" %>
+		<%= yield %>
+		<%= render partial: "layouts/site_shared/footer" %>
+	</body>
 </html>
 
 
