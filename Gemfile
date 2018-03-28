@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -35,8 +35,13 @@ gem 'devise-i18n'
 
 #Rails gem of the Bootstrap based admin theme SB Admin 2
 gem 'bootstrap_sb_admin_base_v2'
-#Bootstrap
-gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
+source 'https://rails-assets.org' do
+  #Bootstrap
+  gem 'rails-assets-bootstrap'
+  #Wrappers for JavaScript alert(), confirm() and other flexible dialogs using Twitter's bootstrap framework
+  gem 'rails-assets-bootbox'
+  gem 'rails-assets-notifyjs'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
