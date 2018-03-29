@@ -28,5 +28,9 @@ puts "Criando as CATEGORIAS... OK"
 
 #########################
 puts "Criando as ADM..."
-	Admin.find_or_create_by(email: "admin@admin.com",password: "123456". password_confirmation: "123456")
+	Admin.create!(
+		name: "admin",
+		email: "admin@admin.com",
+		password: "123456", 
+		password_confirmation: "123456")
 puts "Criando as ADM... OK"
