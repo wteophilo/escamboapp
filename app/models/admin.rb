@@ -6,6 +6,8 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  scope :with_full_access, -> {where(role: 'full_access')}
+
   def role_br
   	if self.role =='full_access'
   		'Acesso Completo'
