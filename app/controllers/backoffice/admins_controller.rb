@@ -6,6 +6,7 @@ class Backoffice::AdminsController < BackofficeController
 
   def new
   	@admin = Admin.new
+    authorize @admin
   end
 
   def edit
