@@ -1,6 +1,7 @@
 class Backoffice::AdminsController < BackofficeController
   before_action :set_admin,only:[:edit,:update,:destroy]
-  after_action :verify_authorized , only:[:new,:destroy]
+  after_action :verify_authorized , only:
+  [:new,:destroy]
   after_action :verify_policy_scoped, only: :index
   def index
   	#@admins = Admin.all
@@ -25,8 +26,8 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def update
-    
     if @admin.update(params_admin)
+      AdminMailer.update_email(current_admin,@admin).deliver_now
   		redirect_to backoffice_admins_path,notice: "Salvo com sucesso!"
   	else
   		render :new

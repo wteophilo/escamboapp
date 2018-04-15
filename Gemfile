@@ -34,7 +34,6 @@ gem 'devise'
 gem 'devise-i18n'
 #Minimal authorization through OO design and pure Ruby classes
 gem "pundit"
-
 #Rails gem of the Bootstrap based admin theme SB Admin 2
 gem 'bootstrap_sb_admin_base_v2'
 source 'https://rails-assets.org' do
@@ -70,5 +69,8 @@ group :development do
   gem 'spring'
   # Generate Entity-Relationship Diagrams for Rails applications
   gem 'rails-erd'
+  #https://mailcatcher.me/
+  gem 'mailcatcher'
+
 end
 
