@@ -36,6 +36,10 @@ gem 'devise-i18n'
 gem "pundit"
 #Rails gem of the Bootstrap based admin theme SB Admin 2
 gem 'bootstrap_sb_admin_base_v2'
+
+#Integration of RubyMoney - Money with Rails
+gem 'money-rails'
+
 source 'https://rails-assets.org' do
   #Bootstrap
   gem 'rails-assets-bootstrap'
