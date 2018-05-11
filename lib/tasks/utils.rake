@@ -23,7 +23,9 @@ namespace :utils do
         description: Faker::Lorem.sentence([2,3,4,5].sample),
         member: Member.all.sample,
         category: Category.all.sample,
-        price: "#{Random.rand(500)},#{Random.rand(99)}"
+        price: "#{Random.rand(500)},#{Random.rand(99)}",
+        picture: File.new(Rails.root.join('public','templates','images-for-ads',"#{Random.rand(2)}.jpg"))
+
       )
    end
    p "Cadastrando anúncios fakes...OK"

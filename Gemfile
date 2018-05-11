@@ -40,6 +40,9 @@ gem 'bootstrap_sb_admin_base_v2'
 #Integration of RubyMoney - Money with Rails
 gem 'money-rails'
 
+#Easy file attachment management for ActiveRecord https://thoughtbot.com/open-source
+gem 'paperclip'
+
 source 'https://rails-assets.org' do
   #Bootstrap
   gem 'rails-assets-bootstrap'
