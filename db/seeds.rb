@@ -27,11 +27,21 @@ end
 puts "Criando as CATEGORIAS... OK"
 
 #########################
-puts "Criando as ADM..."
+puts "Criando ADM Padrao..."
 	Admin.create!(
 		name: "admin",
 		email: "admin@admin.com",
 		password: "123456", 
 		password_confirmation: "123456",
 		role: 0)
-puts "Criando as ADM... OK"
+puts "Criando ADM Padrao... OK"
+
+#########################
+puts "Criando as Membro Padrao..."
+	Member.create!(
+		email: "membro@membro.com",
+		password: "123456", 
+		password_confirmation: "123456"
+	)
+puts "Criando Membro... OK"
+
