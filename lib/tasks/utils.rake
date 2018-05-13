@@ -54,7 +54,7 @@ task generate_ads: :environment do
     member: Member.all.sample,
     category: Category.all.sample,
     price: "#{Random.rand(500)},#{Random.rand(99)}",
-    picture: File.new(Rails.root.join('public','templates','images-for-ads',"#{Random.rand(5)}.jpg"))
+    picture: File.new(Rails.root.join('public','templates','images-for-ads',"#{Random.rand(7)}.jpg"))
 
     )
 end
