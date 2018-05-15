@@ -1,0 +1,20 @@
+<table class ='table table-houver'>
+	<thead>
+		<th>#</th>
+		<th>Imagem</th>
+		<th>Descricao</th>
+		<th>Preço</th>
+	</thead>
+	<tbody>
+		<% @ads.each do |ad|%>
+			<tr>
+				<th scope="row"><%= ad.id %></th>
+				<th><%= image_tag ad.picture(:thumb) %></th>
+				<th><%=ad.description  %></th>
+				<th><%= humanized_money_with_symbol ad.price %></th>
+				
+			</tr>
+		<%end%>
+	</tbody>
+
+</table>
