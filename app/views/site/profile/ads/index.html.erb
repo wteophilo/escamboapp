@@ -3,6 +3,7 @@
 		<th>#</th>
 		<th>Imagem</th>
 		<th>Descricao</th>
+		<th>Categoria</th>
 		<th>Preço</th>
 	</thead>
 	<tbody>
@@ -10,7 +11,8 @@
 			<tr>
 				<th scope="row"><%= ad.id %></th>
 				<th><%= image_tag ad.picture(:thumb) %></th>
-				<th><%=ad.description  %></th>
+				<th><%=ad.title  %></th>
+				<th><%=ad.category%></th>
 				<th><%= humanized_money_with_symbol ad.price %></th>
 				
 			</tr>
