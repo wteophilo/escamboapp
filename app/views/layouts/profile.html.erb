@@ -10,10 +10,7 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= stylesheet_link_tag    'site', media: 'all' %>
   <%= stylesheet_link_tag    'site/profile', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= javascript_include_tag 'site'%>
-  <%= javascript_include_tag 'site/profile'%>
-  <%= csrf_meta_tags %>
+   <%= csrf_meta_tags %>
 </head>
 <body>
   <%= render partial: "layouts/site_shared/navegation" %>
@@ -46,6 +43,11 @@
     <!-- /#page-content-wrapper -->
 
   </div>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'site'%>
+  <%= javascript_include_tag 'site/profile'%>
+  <%=yield :javascripts %>
+  
   <!-- /#wrapper -->
   <%if notice%>
   <%= javascript_tag "$.notify('#{notice}','success');" %>

@@ -42,6 +42,8 @@ gem 'money-rails'
 
 #Easy file attachment management for ActiveRecord https://thoughtbot.com/open-source
 gem 'paperclip'
+#JQuery UI
+gem 'jquery-ui-rails'
 
 source 'https://rails-assets.org' do
   #Bootstrap
