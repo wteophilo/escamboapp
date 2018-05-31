@@ -57,6 +57,7 @@ task generate_ads: :environment do
      member: Member.first,
      category: Category.all.sample,
      price: "#{Random.rand(500)},#{Random.rand(99)}",
+     finish_date: Date.today + Random.rand(90),
      picture: File.new(Rails.root.join('public','templates','images-for-ads',"#{Random.rand(7)}.jpg"))   
      )
  end
@@ -68,6 +69,7 @@ task generate_ads: :environment do
     member: Member.all.sample,
     category: Category.all.sample,
     price: "#{Random.rand(500)},#{Random.rand(99)}",
+    finish_date: Date.today + Random.rand(90),
     picture: File.new(Rails.root.join('public','templates','images-for-ads',"#{Random.rand(7)}.jpg"))
 
     )

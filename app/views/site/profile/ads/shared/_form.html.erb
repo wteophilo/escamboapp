@@ -43,6 +43,16 @@
 
 <div class="row">
 	<div class="col-x1-6">
+		<%= f.label :finish_date %>
+		<div class="input-group">
+			<%= f.date_field :finish_date, class: "form-control"%>
+		</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-x1-6">
 		<%= f.label :picture %> <br>
 		<div class="input-group">
 			<%= image_tag @ad.picture(:medium), class: "img-thumbnail" %>
