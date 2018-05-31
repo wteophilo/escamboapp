@@ -1,6 +1,7 @@
 <h1 class="panel-heading">Administradores</h1>
 <%if @admin.errors.any?%>
     <div class="alert alert-danger">
+        <button type="butto" class="close" data-dismiss="alert" aria-hidden="true">x</button>
         <ul>
             <%= @admin.errors.full_messages.each do |message|%>
             <li><%=message%></li>

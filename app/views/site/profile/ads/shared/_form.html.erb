@@ -1,0 +1,64 @@
+<%if @ad.errors.any?%>
+    <div class="alert alert-danger">
+    	<button type="butto" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+        <ul>
+            <%= @ad.errors.full_messages.each do |message|%>
+            	<li><%=message%></li>
+            <%end%>
+        </ul>
+         
+    </div>
+<%end%>
+
+<%=form_for([:site,:profile,@ad]) do |f|%>
+<div class="row">
+	<div class="col-x1-6">
+		<%= f.label :title %>
+		<div class="input-group">
+			<%= f.text_field :title, class: "form-control", placeholder: "Título" %>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-x1-4">
+		<%= f.label :category %>
+		<div class="input-group">
+			<%= f.collection_select :category_id, Category.all, :id, :description, {}, { class: "form-control" } %>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-x1-2">
+		<%= f.label :price %>
+		<div class="input-group">
+			<div class="input-group-prepend"">
+				<span class="input-group-text"><%= @ad.price.currency.symbol %></span>
+				<%= f.text_field :price, class: "form-control", placeholder: "Valor" %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-x1-6">
+		<%= f.label :picture %> <br>
+		<div class="input-group">
+			<%= image_tag @ad.picture(:medium), class: "img-thumbnail" %>
+			<%= f.file_field :picture, class: "btn" %>
+		</div>
+	</div>
+</div>
+  
+<div class="row">
+	<div class="col-x1-6">
+		<%= f.label :description %>
+		<div class="input-group">
+			<%= f.text_area :description, class: "form-control", rows: 3 %>
+		</div>
+	</div>
+</div>
+<%= submit_tag "#{t('buttons.send')}", class: "btn btn-default"  %>
+
+<%end%>
