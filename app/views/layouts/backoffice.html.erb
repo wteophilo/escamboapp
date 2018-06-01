@@ -30,15 +30,7 @@
    <%= javascript_include_tag 'backoffice'%>
 
 
-	<%if notice%>
-		<%= javascript_tag "$.notify('#{notice}','success');" %>
-	<%end%>
-
-	<%if alert%>
-	   <script>
-	   	 $.notify("<%= alert %>","error")
-	   </script>
-	<%end%>
+	<%= render partial: 'layouts/shared/notification'%>
 	</body>
 </html>
 

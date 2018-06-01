@@ -4,14 +4,16 @@
   <title>Escamboapp</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= stylesheet_link_tag    'site', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= javascript_include_tag 'site'%>
   <%= csrf_meta_tags %>
 </head>
-	<body>
-		<%= render partial: "layouts/site_shared/navegation" %>
-		<%= yield %>
-	</body>
+<body>
+  <%= render partial: "layouts/site_shared/navegation" %>
+  <%= yield %>
+
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'site'%>
+  
+</body>
 </html>
 
 
