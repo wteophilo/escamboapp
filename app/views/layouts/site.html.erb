@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 	<body>
+    <div id = "global-spin" class="loading" style="display: none;">Loading&#8230;</div>
 		<%= render partial: "layouts/site_shared/navegation" %>
 		<%= yield %>
 		<%= render partial: "layouts/site_shared/footer" %>
