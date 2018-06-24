@@ -52,8 +52,9 @@ task generate_ads: :environment do
  p "Cadastrando anúncios fakes...."
  5.times do
    Ad.create!(
-     title: Faker::Lorem.sentence([2,3,4,5].sample),
-     description: Faker::Lorem.sentence([2,3,4,5].sample),
+     title: Faker::Lorem.sentence([2,3].sample),
+     description_md: makdown_fake,
+     description_short: Faker::Lorem.sentence([2,3,4,5].sample),
      member: Member.first,
      category: Category.all.sample,
      price: "#{Random.rand(500)},#{Random.rand(99)}",
@@ -64,8 +65,9 @@ task generate_ads: :environment do
 
  100.times do
   Ad.create!(
-    title: Faker::Lorem.sentence([2,3,4,5].sample),
-    description: Faker::Lorem.sentence([2,3,4,5].sample),
+    title: Faker::Lorem.sentence([2,3].sample),
+    description_md: makdown_fake,
+    description_short: Faker::Lorem.sentence([2,3,4,5].sample),
     member: Member.all.sample,
     category: Category.all.sample,
     price: "#{Random.rand(500)},#{Random.rand(99)}",
@@ -77,5 +79,7 @@ end
 p "Cadastrando anúncios fakes...OK"
 end
 
-
+def makdown_fake
+  %x(ruby -e "require 'doctor_ipsum'; puts DoctorIpsum::Markdown.entry")
+end
 end
