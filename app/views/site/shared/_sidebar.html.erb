@@ -1,0 +1,8 @@
+<div id = "site-bar"class="col-lg-3">
+  <h1 class="my-4">Shop Name</h1>
+  <div class="list-group">
+    <%@categories.each do |category| %>
+    <%= link_to "#{category.description} (#{category.ads_count})",site_category_path(category.id), class:"list-group-item" %>
+    <%end%>    
+  </div>
+</div>
