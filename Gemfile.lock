@@ -87,6 +87,8 @@ GEM
       railties (>= 3.2, < 6.0)
     foreman (0.85.0)
       thor (~> 0.19.1)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.5)
@@ -195,6 +197,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    rb-readline (0.5.5)
     rdoc (4.3.0)
     redcarpet (3.4.0)
     responders (2.4.0)
@@ -268,6 +271,7 @@ DEPENDENCIES
   enum_help
   faker
   foreman
+  friendly_id (~> 5.1.0)
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
@@ -284,6 +288,7 @@ DEPENDENCIES
   rails-assets-marked!
   rails-erd
   rails-i18n
+  rb-readline
   redcarpet
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

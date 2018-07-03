@@ -1,6 +1,8 @@
 class Category < ActiveRecord::Base
-	validates_presence_of :description
+	extend FriendlyId
+	friendly_id :description, use: :slugged
 
+	validates_presence_of :description
   	# Associations
   	has_many :ads
 

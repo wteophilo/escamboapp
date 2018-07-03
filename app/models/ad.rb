@@ -14,7 +14,7 @@ class Ad < ActiveRecord::Base
 
   scope :descending_order, ->(quantity = 10) {limit(quantity).order(created_at: :desc)}
   scope :to_the, ->(member){where(member: member)}
-  scope :where_category, ->(member){where(member: member)} 
+  scope :where_category, ->(id){where(member: id)} 
 
 private
     def md_to_html
