@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
   <title>Escamboapp</title>
@@ -9,7 +9,23 @@
 	<body>
     <div id = "global-spin" class="loading" style="display: none;">Loading&#8230;</div>
 		<%= render partial: "layouts/site_shared/navegation" %>
-		<%= yield %>
+		
+    <div class="container">
+
+      <div class="row">
+        <%=render  partial: 'layouts/site_shared/sidebar'%>
+        <div id = "home_detail" class="col-md-9">
+          <% if controller_path == 'site/home'%>
+            <%=render  partial: 'layouts/site_shared/carousel'%><br/>
+          <%end%>
+          <div class="row">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 		<%= render partial: "layouts/site_shared/footer" %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'site' %>
