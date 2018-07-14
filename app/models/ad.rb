@@ -1,5 +1,7 @@
 class Ad < ActiveRecord::Base
   
+  TOTAL_PAGE = 6
+
   before_save :md_to_html
   
   belongs_to :category, counter_cache: true
@@ -12,12 +14,12 @@ class Ad < ActiveRecord::Base
   validates :title, :description_md, :description_short, :category, :price, :picture, :finish_date, presence: true
   validates :price, numericality:{greater_than: 0}
 
-  scope :descending_order, ->(quantity = 10,page = 1) {
-    limit(quantity).order(created_at: :desc).page(page).per(6)
+  scope :descending_order, ->(page) {
+    order(created_at: :desc).page(page).per(TOTAL_PAGE)
   }
 
-  scope :search, ->(term,page = 1)  {
-    where("lower(title) like ?", "%#{term.downcase}%").page(page).per(6)
+  scope :search, ->(term,page)  {
+    where("lower(title) like ?", "%#{term.downcase}%").page(page).per(TOTAL_PAGE)
   } 
 
   scope :to_the, ->(member){where(member: member)}
