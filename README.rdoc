@@ -1,28 +1,27 @@
-== README
+# Escamboapp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Projeto de uma mini loja virtual com três módulos
+* Backoffice -> Cadastro de membros e configuração de acesso
+* Profile -> Cadastro e configurações de produtos
+* Site -> lista e detalhes de todos os produtos
 
-Things you may want to cover:
+## Dependências do projeto 
 
-* Ruby version
+* ImageMagick (https://www.imagemagick.org)
 
-* System dependencies
+```
+	sudo apt-get update
+	sudo apt-get install imagemagick
+```
+* Graphiz(https://www.graphiz.org) - Apenas para desenvolvimento
+```
+	sudo apt-get update
+	sudo apt-get install graphiz
+```
 
-* Configuration
+## Acesso
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Após clonar o projeto faça as migrações
+```
+rake dev:setup
+``` 
