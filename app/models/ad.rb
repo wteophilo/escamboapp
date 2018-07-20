@@ -6,6 +6,7 @@ class Ad < ActiveRecord::Base
   
   belongs_to :category, counter_cache: true
   belongs_to :member
+  has_many :comments
 
   monetize :price_cents
 

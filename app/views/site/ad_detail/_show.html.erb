@@ -1,30 +1,30 @@
 
-<div class="card mt-4">
-  <%= image_tag @ad.picture.url(:large), class:"card-img-top img-fluid" %>
-  <div class="card-body">
-    <h3 class="card-title"><%=@ad.title%></h3>
-    <h4><%=humanized_money_with_symbol @ad.price%></h4>
-    <p class="card-text"><%= @ad.description.html_safe %></p>
-    <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-    4.0 stars
-  </div>
-</div>
-<!-- /.card -->
+<div class="thumbnail">
+  <%= image_tag @ad.picture.url(:large), class:"img-responsive" %>
 
-<div class="card card-outline-secondary my-4">
-  <div class="card-header">
-    Product Reviews
-  </div>
-  <div class="card-body">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-    <hr>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-    <hr>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-    <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-    <hr>
-    <a href="#" class="btn btn-success">Leave a Review</a>
+  <div class="caption-full">
+    <h4 class="pull-right"><%= humanized_money_with_symbol @ad.price %></h4>
+    <h4><a href="#"><%= @ad.title %></a>
+    </h4>
+    <%= @ad.description.html_safe %>
   </div>
 </div>
+
+
+<div class="well">
+  <% if member_signed_in? %>
+    <div class="text-right">
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#commentModal">
+        <%= t('labels.let_your_comment') %>
+      </button>
+    </div>
+    <% else %>
+    <div class="text-right">
+      <%= link_to "#{t('labels.login_to_comment')}", new_member_session_path, class:"btn btn-success" %>
+    </div>
+  <% end %>
+  <hr>
+  <%= render partial: 'site/ad_detail/comments' %>
+</div>
+
+<%= render partial: 'site/ad_detail/comment_modal' %>
