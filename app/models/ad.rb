@@ -24,7 +24,7 @@ class Ad < ActiveRecord::Base
   } 
 
   scope :to_the, ->(member){where(member: member)}
-  scope :where_category, ->(id){where(member: id)} 
+  scope :where_category, ->(id, page) { where(category: id).page(page).per(TOTAL_PAGE) }
   
 private
     def md_to_html

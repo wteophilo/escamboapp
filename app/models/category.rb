@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-	extend FriendlyId
+	include FriendlyId
 	friendly_id :description, use: :slugged
 
 	validates_presence_of :description
