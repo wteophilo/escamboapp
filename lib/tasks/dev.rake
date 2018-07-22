@@ -66,12 +66,12 @@ task generate_ads: :environment do
  p "Cadastrando anúncios fakes...."
  5.times do
    Ad.create!(
-     title: Faker::Lorem.sentence([2,3].sample),
+     title: Faker::Commerce.product_name,
      description_md: makdown_fake,
      description_short: Faker::Lorem.sentence([2,3,4,5].sample),
      member: Member.first,
      category: Category.all.sample,
-     price: "#{Random.rand(500)},#{Random.rand(99)}",
+     price: Faker::Commerce.price,
      finish_date: Date.today + Random.rand(90),
      picture: File.new(Rails.root.join('public','templates','images-for-ads',"#{Random.rand(7)}.jpg"))   
      )
@@ -86,7 +86,7 @@ task generate_ads: :environment do
     category: Category.all.sample,
     price: "#{Random.rand(500)},#{Random.rand(99)}",
     finish_date: Date.today + Random.rand(90),
-    picture: File.new(Rails.root.join('public','templates','images-for-ads',"#{Random.rand(7)}.jpg"))
+    picture: File.new(Rails.root.join('public','templates','images-for-ads',"#{Random.rand(10)}.jpg"))
 
     )
 end

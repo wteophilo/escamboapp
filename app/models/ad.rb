@@ -2,19 +2,25 @@ class Ad < ActiveRecord::Base
   
   TOTAL_PAGE = 6
 
+  #filter
   before_save :md_to_html
-  
+
+   #association
   belongs_to :category, counter_cache: true
   belongs_to :member
   has_many :comments
 
+  #gem
   monetize :price_cents
-
+  ratyrate_rateable "quality"
   has_attached_file :picture, styles: {large: "800x300#", medium: "320x150>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  
+  #validations
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
   validates :title, :description_md, :description_short, :category, :price, :picture, :finish_date, presence: true
   validates :price, numericality:{greater_than: 0}
 
+  #scope
   scope :descending_order, ->(page) {
     order(created_at: :desc).page(page).per(TOTAL_PAGE)
   }
