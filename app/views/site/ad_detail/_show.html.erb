@@ -9,7 +9,7 @@
   </div>
 
   <div class="ratings">
-    <p class="pull-right"><%= @ad.comments.size %></p>
+    <p class="pull-right"><%= @ad.rates('quality').count %><%= t('labels.reviews')%></p>
     <p><%= rating_for @ad, 'quality' %></p>
   </div>
 </div>
